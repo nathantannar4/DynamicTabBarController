@@ -18,7 +18,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let isTranslucent = false
         
-        var vcs = [UIViewController]()
+        var vcs: [UIViewController] = [UINavigationController(rootViewController: TableViewController())]
         for fruit in Fruit.all() {
             let vc = ViewController()
             vc.tabBarItem.image = fruit.image()?.withRenderingMode(.alwaysTemplate)

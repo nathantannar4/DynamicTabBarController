@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3833C49220367CDA00E4D301 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833C49120367CDA00E4D301 /* TableViewController.swift */; };
 		3861787E1FBC21750059FE89 /* DynamicTabBarController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3861787C1FBC21750059FE89 /* DynamicTabBarController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		386178871FBC218C0059FE89 /* DynamicTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386178841FBC218B0059FE89 /* DynamicTabBarController.swift */; };
 		386178881FBC218C0059FE89 /* DynamicTabBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386178851FBC218B0059FE89 /* DynamicTabBarCell.swift */; };
@@ -48,6 +49,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3833C49120367CDA00E4D301 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		3833C49320367D6F00E4D301 /* DynamicTabBarController.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = DynamicTabBarController.podspec; sourceTree = "<group>"; };
+		3833C49420367D6F00E4D301 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		3833C49520367D6F00E4D301 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		386178791FBC21740059FE89 /* DynamicTabBarController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DynamicTabBarController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3861787C1FBC21750059FE89 /* DynamicTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DynamicTabBarController.h; sourceTree = "<group>"; };
 		3861787D1FBC21750059FE89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -88,6 +93,9 @@
 		3861786F1FBC21740059FE89 = {
 			isa = PBXGroup;
 			children = (
+				3833C49420367D6F00E4D301 /* LICENSE */,
+				3833C49520367D6F00E4D301 /* README.md */,
+				3833C49320367D6F00E4D301 /* DynamicTabBarController.podspec */,
 				3861787B1FBC21750059FE89 /* DynamicTabBarController */,
 				386178931FBC21C60059FE89 /* Example */,
 				3861787A1FBC21740059FE89 /* Products */,
@@ -123,6 +131,7 @@
 				386178941FBC21C60059FE89 /* AppDelegate.swift */,
 				386178A61FBC21F10059FE89 /* Fruit.swift */,
 				386178A41FBC21EB0059FE89 /* ViewController.swift */,
+				3833C49120367CDA00E4D301 /* TableViewController.swift */,
 				386178A81FBC22E10059FE89 /* UIView+AutoLayout.swift */,
 				3861789B1FBC21C60059FE89 /* Assets.xcassets */,
 				3861789D1FBC21C60059FE89 /* LaunchScreen.storyboard */,
@@ -261,6 +270,7 @@
 				386178A71FBC21F10059FE89 /* Fruit.swift in Sources */,
 				386178A91FBC22E10059FE89 /* UIView+AutoLayout.swift in Sources */,
 				386178A51FBC21EB0059FE89 /* ViewController.swift in Sources */,
+				3833C49220367CDA00E4D301 /* TableViewController.swift in Sources */,
 				386178951FBC21C60059FE89 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
