@@ -109,7 +109,7 @@ open class DynamicTabBarController: UIViewController {
         pageViewController.dataSource = self
         pageViewController.delegate = self
         pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
-        pageScrollView = pageViewController.view.subviews.flatMap { $0 as? UIScrollView }.first
+        pageScrollView = pageViewController.view.subviews.compactMap { $0 as? UIScrollView }.first
         pageScrollView?.scrollsToTop = false
         pageScrollView?.delegate = self
         return pageViewController
@@ -221,16 +221,16 @@ open class DynamicTabBarController: UIViewController {
     }
     
     fileprivate func setupChildViewController(_ viewController: UIViewController) {
-        viewController.willMove(toParentViewController: self)
-        addChildViewController(pageViewController)
-        viewController.didMove(toParentViewController: self)
+        viewController.willMove(toParent: self)
+        addChild(pageViewController)
+        viewController.didMove(toParent: self)
     }
     
     fileprivate func removeChildViewController(_ viewController: UIViewController) {
-        viewController.willMove(toParentViewController: nil)
+        viewController.willMove(toParent: nil)
         viewController.view.removeFromSuperview()
-        viewController.removeFromParentViewController()
-        viewController.didMove(toParentViewController: nil)
+        viewController.removeFromParent()
+        viewController.didMove(toParent: nil)
     }
     
     // MARK: - View Life Cycle [Public]
@@ -358,7 +358,7 @@ open class DynamicTabBarController: UIViewController {
         guard index < viewControllers.count else { return }
         previousIndex = index
         shouldScrollIndicator = false
-        let direction: UIPageViewControllerNavigationDirection = index > currentIndex ? .forward : .reverse
+        let direction: UIPageViewController.NavigationDirection = index > currentIndex ? .forward : .reverse
         pageViewController.setViewControllers([viewControllers[index]], direction: direction, animated: animated) { [weak self] _ in
             self?.shouldScrollIndicator = true
         }

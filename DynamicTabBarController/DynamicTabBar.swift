@@ -90,7 +90,7 @@ final public class DynamicTabBar: UIView {
         return view
     }()
     
-    open var isTranslucent: Bool = false {
+    public var isTranslucent: Bool = false {
         didSet {
             if isTranslucent && blurView.superview == nil {
                 insertSubview(blurView, at: 0)
@@ -166,21 +166,21 @@ final public class DynamicTabBar: UIView {
     
     // MARK: - Methods [Public]
     
-    open func scrollCurrentBarView(from oldIndex: Int, to newIndex: Int, with offset: CGFloat) {
+    public func scrollCurrentBarView(from oldIndex: Int, to newIndex: Int, with offset: CGFloat) {
         
         deselectVisibleCells()
         let currentIndexPath = IndexPath(row: oldIndex, section: 0)
         let nextIndexPath = IndexPath(row: newIndex, section: 0)
         guard let currentCell = collectionView.cellForItem(at: currentIndexPath) as? DynamicTabBarCell, let nextCell = collectionView.cellForItem(at: nextIndexPath) as? DynamicTabBarCell else { return }
         let scrollRate = offset / frame.width
-        let width = fabs(scrollRate) * (nextCell.frame.width - currentCell.frame.width)
+        let width = abs(scrollRate) * (nextCell.frame.width - currentCell.frame.width)
         let newOffset = currentCell.frame.minX + scrollRate * (scrollRate > 0 ? currentCell.frame.width : nextCell.frame.width)
         scrollIndicatorConstraints?.left?.constant = newOffset
         scrollIndicatorWidth = currentCell.frame.width + width
         collectionView.layoutIfNeeded()
     }
     
-    open func moveCurrentBarView(to index: Int, animated: Bool, shouldScroll: Bool) {
+    public func moveCurrentBarView(to index: Int, animated: Bool, shouldScroll: Bool) {
         
         let indexPath = IndexPath(item: index, section: 0)
         if shouldScroll {
@@ -208,7 +208,7 @@ final public class DynamicTabBar: UIView {
         }
     }
     
-    open func updateUserInteraction(isEnabled: Bool) {
+    public func updateUserInteraction(isEnabled: Bool) {
         collectionView.isUserInteractionEnabled = isEnabled
     }
     
@@ -221,6 +221,6 @@ final public class DynamicTabBar: UIView {
     
     /// Updates the visible cells to their inactive state
     private func deselectVisibleCells() {
-        collectionView.visibleCells.flatMap { $0 as? DynamicTabBarCell }.forEach { $0.tintColor = inactiveTintColor }
+        collectionView.visibleCells.compactMap { $0 as? DynamicTabBarCell }.forEach { $0.tintColor = inactiveTintColor }
     }
 }
